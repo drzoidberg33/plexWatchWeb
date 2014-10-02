@@ -97,4 +97,10 @@ echo "<h1>".$users."</h1><h5>Users</h5>";
 echo "</li>";
 
 
+$plays = $db->querySingle("SELECT count(*) FROM processed") or die ("Failed to access plexWatch database. Please check your settings.");
+
+echo "<li>";
+echo "<h1>".$plays."</h1><h5>Total Plays</h5>";
+echo "</li>";
+
 echo "</ul>";
