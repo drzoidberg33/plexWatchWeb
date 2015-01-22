@@ -45,6 +45,7 @@
 					<li><a href="stats.php"><i class="icon-2x icon-tasks icon-white" data-toggle="tooltip" data-placement="bottom" title="Stats" id="stats"></i></a></li>
 					<li><a href="users.php"><i class="icon-2x icon-group icon-white" data-toggle="tooltip" data-placement="bottom" title="Users" id="users"></i></a></li>
 					<li class="active"><a href="charts.php"><i class="icon-2x icon-bar-chart icon-white" data-toggle="tooltip" data-placement="bottom" title="Charts" id="charts"></i></a></li>
+					<li><a href="sync.php"><i class="icon-2x icon-refresh icon-white" data-toggle="tooltip" data-placement="bottom" title="Sync Stats" id="sync"></i></a></li>
 					<li><a href="settings.php"><i class="icon-2x icon-wrench icon-white" data-toggle="tooltip" data-placement="bottom" title="Settings" id="settings"></i></a></li>
 					
 				</ul>
@@ -347,6 +348,9 @@
 	});
 	$(document).ready(function() {
 		$('#stats').tooltip();
+	});
+	$(document).ready(function() {
+		$('#sync').tooltip();
 	});
 	</script>
 	
