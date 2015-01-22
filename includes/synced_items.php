@@ -90,7 +90,7 @@ function getServerList() {
         if ($fileContents = file_get_contents("" . getPlexTVURL() . "/pms/servers.xml?includeLite=1&X-Plex-Token=" . getPlexAuthToken() . "")) {
             $serverList = simplexml_load_string($fileContents);
         } else {
-            error_log('PlexWatchWeb error: unable to retrieve sync list.');
+            error_log('PlexWatchWeb error: unable to retrieve server list.');
             return false;
         }
     } else {
@@ -126,7 +126,10 @@ function getSyncItems()
     foreach ($serverList as $machine) {
         $fileContents = '';
         if ($fileContents = file_get_contents("" . getPlexTVURL() . "/servers/" . $machine['id'] . "/sync_lists?X-Plex-Token=" . getPlexAuthToken() . "")) {
-            $syncList = simplexml_load_string($fileContents) or die ('<div class=\"alert alert-warning \">Failed to access Plex Media Server. Please check your settings.</div>');
+            $syncList = simplexml_load_string($fileContents);
+        } else {
+            error_log('PlexWatchWeb error: unable to retrieve sync list.');
+            return false;
         }
 
         foreach ($syncList->SyncList as $synced) {
