@@ -294,7 +294,7 @@ if (isset($_GET['s'])) {
     <div class="control-group">
         <label class="control-label" for="myPlexPass">Password (optional)</label>
         <div class="controls">
-            <input id="myPlexPass" name="myPlexPass" type="password" placeholder="" class="input-xlarge" value="<?php echo $plexWatch['myPlexPass'] ?>">
+            <input id="myPlexPass" name="myPlexPass" type="password" placeholder="" class="input-xlarge" value="">
             <p class="help-block">If you would like to access plexWatch/Web on other networks, a <a href="https://plex.tv/users/sign_in">Plex.tv</a> username and password are required.</p>
         </div>
     </div>
